@@ -12,13 +12,13 @@ from selenium.webdriver.common.actions.action_builder   import ActionBuilder
 from selenium.webdriver.common.actions.pointer_input    import PointerInput
 
 caps = {}
-caps["platformName"] = "Android"
-caps["deviceName"] = "08f3dc7b0404"
+caps["platformName"]    = "Android"
+caps["deviceName"]      = "08f3dc7b0404"
 """
-caps["appPackage"] = "com.miui.calculator"
-caps["appActivity"] = "com.miui.calculator.cal.CalculatorActivity"
+#caps["avd"]            = "AppiumP"
+caps["appPackage"]      = "com.miui.calculator"
+caps["appActivity"]     = "com.miui.calculator.cal.CalculatorActivity"
 """
-#caps["avd"] = "AppiumP"
 
 driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", caps)
 
