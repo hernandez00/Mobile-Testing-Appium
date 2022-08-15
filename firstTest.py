@@ -57,3 +57,10 @@ el19 = driver.find_element(by=AppiumBy.ID, value="com.miui.calculator:id/btn_3_s
 el19.click()
 el20 = driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value="equals")
 el20.click()
+
+sleep(1)
+
+if driver.find_element(by=AppiumBy.ID, value="com.miui.calculator:id/result").text == "= 679.14":
+    print("Deu certo!")
+
+driver.quit()
