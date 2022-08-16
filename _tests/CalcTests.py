@@ -1,14 +1,15 @@
 import unittest
 from _pageObjects.Calc      import Calculator
-from Webdriver              import Driver
+from _webdriver.Webdriver   import Driver
+from time                   import sleep
 
-class CalculadoraTestes(unittest.TestCase):
+class CalculatorTests(unittest.TestCase):
     def setUp(self):
         self.driver = Driver()
 
     def test_sum(self):
         calculator = Calculator(self.driver)
-        calculator.somming(1, 2)
+        calculator.summing(1, 2)
 
     def test_multiplicacao(self):
         calculator = Calculator(self.driver)
@@ -16,6 +17,3 @@ class CalculadoraTestes(unittest.TestCase):
 
     def tearDown(self):
         self.driver.instance.quit()
-    
-if __name__ == '__main__':
-    unittest.main()
