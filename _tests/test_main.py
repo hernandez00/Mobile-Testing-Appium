@@ -21,6 +21,7 @@ class TestCalculator(unittest.TestCase):
         self.driver = Driver()
 
     def test_openApp(self):
+        """
         actions = ActionChains(self.driver.instance)
         actions.w3c_actions = ActionBuilder(self.driver.instance, mouse=PointerInput(interaction.POINTER_TOUCH, "touch"))
         actions.w3c_actions.pointer_action.move_to_location(545, 1612)
@@ -31,10 +32,10 @@ class TestCalculator(unittest.TestCase):
     
         el2 = self.driver.instance.find_element(by=AppiumBy.XPATH, value="(//android.widget.TextView[@content-desc=\"Calculator\"])[2]")
         el2.click()
-
+        """
         # Permitir o click no botão de aceitar termos e condições
         # Liberar para dispositivo emulado
-        """
+        
         actions = ActionChains(self.driver.instance)
         actions.w3c_actions = ActionBuilder(self.driver.instance, mouse=PointerInput(interaction.POINTER_TOUCH, "touch"))
         actions.w3c_actions.pointer_action.move_to_location(771, 2018)
@@ -46,7 +47,6 @@ class TestCalculator(unittest.TestCase):
         # Liberar para dispositivo fisico
         el2 = self.driver.instance.find_element(by=AppiumBy.ID, value="android:id/button1")
         el2.click()
-        """
 
     def test_sum(self):
         calcHS = CHS(self.driver)

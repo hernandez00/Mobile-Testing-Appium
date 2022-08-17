@@ -11,8 +11,8 @@ class Driver:
 
         self.instance = webdriver.Remote('http://192.168.100.221:4723/wd/hub', self._caps)
 
-        """
-self._options = UiAutomator2Options
+"""
+        self._options = UiAutomator2Options
 
         self._options.platform_name = "Android"
         self._options.device_name   = "emulator-5554"
