@@ -2,8 +2,10 @@
 # pip install Appium-Python-Client
 
 from appium                             import webdriver
+from appium.options.android             import UiAutomator2Options
 from appium.webdriver.common.appiumby   import AppiumBy
 from time                               import sleep
+
 
 # For W3C actions
 from selenium.webdriver.common.action_chains            import ActionChains
@@ -11,17 +13,28 @@ from selenium.webdriver.common.actions                  import interaction
 from selenium.webdriver.common.actions.action_builder   import ActionBuilder
 from selenium.webdriver.common.actions.pointer_input    import PointerInput
 
+options = UiAutomator2Options
+
+options.platform_name = "Android"
+options.device_name   = "08f3dc7b0404"
+options.app_package   = "com.miui.calculator"
+options.app_activity  = "com.miui.calculator.cal.CalculatorActivity"
+
+"""
 caps = {}
 caps["platformName"]    = "Android"
 caps["deviceName"]      = "08f3dc7b0404"
-"""
 #caps["avd"]            = "AppiumP"
 caps["appPackage"]      = "com.miui.calculator"
 caps["appActivity"]     = "com.miui.calculator.cal.CalculatorActivity"
 """
 
-driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", caps)
+driver = webdriver.Remote("http://127.0.0.1:4723/wd/hub", options=options)
 
+el1 = driver.find_element(by=AppiumBy.ID, value="android:id/button1")
+el1.click()
+
+"""
 sleep(2)
 
 actions = ActionChains(driver)
@@ -64,3 +77,4 @@ if driver.find_element(by=AppiumBy.ID, value="com.miui.calculator:id/result").te
     print("Deu certo!")
 
 driver.quit()
+"""
